@@ -1,0 +1,38 @@
+<!-- add-plantas.component.html -->
+<div class="container">
+    <h2>Agregar Nueva Planta</h2>
+    <form (ngSubmit)="onSubmit()" #plantForm="ngForm">
+
+        <div class="form-group">
+            <label for="plantName">Nombre de la Planta:</label>
+            <input type="text" id="plantName" name="plantName" class="form-control" required
+                [(ngModel)]="planta.nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="wateringSchedule">Horario de Riego:</label>
+            <input type="text" id="wateringSchedule" name="wateringSchedule" class="form-control" required
+                [(ngModel)]="planta.horarioRiego" placeholder="Ej. Cada 3 días">
+        </div>
+
+        <div class="form-group">
+            <label for="soilMoisture">Humedad del Suelo:</label>
+            <input type="text" id="soilMoisture" name="soilMoisture" class="form-control" required
+                [(ngModel)]="planta.humedadSuelo" placeholder="Ej. 40%">
+        </div>
+
+        <div class="form-group">
+            <label for="waterAmount">Cantidad de Agua (litros):</label>
+            <input type="number" id="waterAmount" name="waterAmount" class="form-control" required [(ngModel)]="planta.cantidadAgua" placeholder="Ej. 1.5">
+        </div>
+
+
+        <div class="form-group">
+            <label for="plantDescription">Descripción:</label>
+            <textarea id="plantDescription" name="plantDescription" class="form-control" rows="4" required
+                [(ngModel)]="planta.descripcion"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!plantForm.form.valid">Agregar Planta</button>
+    </form>
+</div>
