@@ -17,10 +17,7 @@ export const routes: Routes = [
         path: 'inventario',
         loadComponent: () => import('./Components/Inventario/tus-plantas/tus-plantas.component').then(m => m.TusPlantasComponent)
     },
-    {
-        path: 'notis',
-        loadComponent: () => import('./Components/Notis/notificaciones/notificaciones.component').then(m => m.NotificacionesComponent)
-    },
+
     {
         path:'**',
         redirectTo:'',
